@@ -1,4 +1,19 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+}
 
+body {
+  background-image: url("assets/background.webp");
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-attachment: fixed;
+  background-size: cover;
+}
 
 /*custom elements*/
 page-title, titles {
@@ -646,215 +661,4 @@ colour-table {
   display: block;      /* make it block-level to apply auto margins */
   -webkit-text-stroke: 0; /* REMOVE any stroke */
   text-stroke: 0;
-}
-
-
-
-
-
-
-
-
-
-/* ===============================
-   ROOT
-   =============================== */
-:root {
-  --footer-gap: 5px;
-  --footer-height: 52px; /* adjust if footer text wraps */
-}
-
-/* ===============================
-   MAIN
-   =============================== */
-html {
-	height: -webkit-fill-available;
-}
-
-body {
-  padding-bottom: calc(
-    var(--footer-height) + 
-    var(--footer-gap) + 
-    env(safe-area-inset-bottom)
-  );
-}
-
-body::before {
-	content: "";
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background-image: url("assets/background.webp");
-	background-repeat: no-repeat;
-	background-position: center center;
-	background-size: cover;
-	z-index: -1;
-}
-
-html, body {
-	margin: 0;
-	padding: 0;
-	height: 100%;
-	font-family: Arial, sans-serif;
-	overflow-x: hidden;
-}
-
-/* ===============================
-   NAVIGATION BAR
-   =============================== */
-.nav-bar {
-	position: sticky;
-	top: 0;
-	z-index: 1000;
-
-	list-style-type: none;
-	margin: 0;
-	padding: 0 20px;
-	text-align: right;
-}
-
-.nav-bar li {
-	display: inline-block;
-}
-
-.page-current {
-	background-color: #5d5d5d;
-	color: #ffffff;
-}
-
-.page-current:hover {
-	box-shadow: 6px 5px 3px #ff0000;
-}
-
-.page-other {
-	background-color: #ffffff;
-	color: #ff0000;
-} 
-
-.page-other:hover {
-	background-color: #ff0000;
-	color: #ffffff;
-	box-shadow: 6px 5px 3px #ffffff;
-}
-
-.page-current, .page-other {
-	font-family: "Arial Black", sans-serif;
-	font-size: 14px;  
-	border-radius: 10px;
-	padding: 0.625rem 1.25rem; /* Proportional padding */
-	display: block;
-	text-align: center;
-	text-decoration: none;
-	box-shadow: 6px 5px 3px #ff0000;
-	font-weight: bold;
-	margin: 0.3125rem; /* Responsive margin */
-}
-
-/* ===============================
-   FOOTER
-   =============================== */
-.footer {
-  position: fixed;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: calc(var(--footer-gap) + env(safe-area-inset-bottom));
-  background-color: #333333;
-  border-radius: 20px;
-  padding: 5px 20px;
-  white-space: nowrap;
-  max-width: 90%;
-  box-sizing: border-box;
-  text-align: center;
-  color: white;
-  z-index: 1000;
-}
-
-.footer-spacer {
-  height: calc(
-    52px + 
-    5px + 
-    env(safe-area-inset-bottom)
-  );
-}
-
-/* ===============================
-   TEXT
-   =============================== */
-/*Page Header*/
-.text-1 {
-	color: white;
-	text-align: center;
-	font-family: "Impact", sans-serif;
-	font-size: 48px;
-}
-
-/*Section Titles*/
-.text-2 {
-	color: white;
-	text-align: center;
-	font-family: "Arial Black", sans-serif;
-	font-size: 27.344px;
-	text-transform: uppercase;
-}
-
-/*Platform Name*/
-.text-3 {
-    font-size: 21.875px; /* Text size */
-    font-weight: bold; /* Bold text */
-    color: #6e6d68; /* Text color */
-    -webkit-text-stroke: 1px #24252b; /* Outline effect */
-    text-align: left; /* Align text to the left */
-    margin: 0; /* No margin to align with description */
-    text-decoration: none;
-}
-
-/*Social Tag*/
-.text-4 {
-    font-size: 17.5px; /* Text size */
-    color: #FF0000;
-    text-align: left; /* Align text to the left */
-    margin: 0; /* No margin for better alignment */
-    margin-top: 5px; /* Add slight space below the title */
-    text-decoration: none;
-}
-
-/*Main Text*/
-.text-5 {
-	color: white;
-	text-align: center;
-	font-family: "Arial Black", sans-serif;
-	font-size: 14px;
-}
-
-.text-5-1 {
-	color: #FF0000;
-	text-decoration: none;
-}
-
-.text-5-1:visited {
-	color: #FF0000;
-}
-
-.text-5-1:hover {
-	text-decoration: underline;
-}
-
-.text-5-2 {
-  
-}
-
-.text-6 {
-  font-size: 11.2px;
-}
-
-.text-6-1 {
-  font-size: 11.2px;
-  color: #FF0000;
-  text-decoration: none;
-}
-
-.text-6-1:hover {
-  text-decoration: underline;
 }

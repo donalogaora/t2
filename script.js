@@ -63,6 +63,9 @@ const productImages = {
     //'/assets/shop/purple_securefit_hose-arm_clip_adapter_for_miele_wide_upholstery_nozzle.webp',
     //'/assets/shop/pink_securefit_hose-arm_clip_adapter_for_miele_wide_upholstery_nozzle.webp',
     'assets/shop/red_securefit_hose-arm_clip_adapter_for_miele_wide_upholstery_nozzle.webp'
+  ],
+  '4A': [
+    'assets/shop/blank_securefit_hose-arm_clip_adapter_for_miele_wide_upholstery_nozzle.webp'
   ]
   // Add more productId/image arrays here
 };
