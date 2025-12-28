@@ -1,20 +1,4 @@
-/* Base Styles */
-html, body {
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  min-height: 100vh;
-}
 
-body {
-  background-image: url(../assets/main_background.png);
-  background-repeat: no-repeat;
-  background-position: right top;
-  background-attachment: fixed;
-  background-size: cover;
-}
 
 /*custom elements*/
 page-title, titles {
@@ -237,16 +221,33 @@ colour-table {
   /*box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow effect */
 /*}*/
 
+/* Hide elements with the hidden class */
+.hidden {
+  display: none !important;
+}
+
+#cart-nav-item {
+  width: auto;
+}
+
+/* Ensure all nav items use consistent layout */
 .nav-list {
-  list-style-type: none;
+  display: flex;
+  flex-direction: row-reverse;
+  list-style: none;
+  padding: 0;
   margin: 0;
-  padding: 0 20px;
-  overflow: hidden;
-  text-align: right;
+  gap: 10px;
+  align-items: center;
 }
 
 .nav-list li {
   display: inline-block;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
 }
 
 .nav-link, .page-button {
@@ -395,6 +396,7 @@ colour-table {
     -webkit-text-stroke: 1px #24252b; /* Outline effect */
     text-align: center; /* Center the text horizontally */
     margin: 10px 0; /* Space around the title */
+    padding: 0 20px; /* Add space on left and right */
 }
 
 .shop-card-description {
@@ -435,11 +437,10 @@ colour-table {
     font-weight: bold !important; /* Force bold text */
     color: #6e6d68; /* Transparent fill color */
     -webkit-text-stroke: 1px #24252b; /* Outline effect */
-    text-transform: uppercase; /* Uppercase text */
     margin-right: 10px; /* Control spacing between price and button */
 }
 
-.shop-order-button {
+.shop-order-button, .soap-order-button {
     padding: 10px 20px; /* Adjust button padding */
     background-color: #ffcc00; /* Button background color */
     color: #253b80; /* Button text color */
@@ -455,20 +456,32 @@ colour-table {
     background-color: #5d5d5d; /* Button hover color */
 }
 
-.circle-container {
-    display: flex;
-    justify-content: space-between; /* Space out the circles evenly */
-    width: 100%; /* Make sure it takes the full width */
-    padding: 10px; /* Add some padding to prevent the circles from touching edges */
+.soap-order-button:hover {
+    background-color: #5d5d5d; /* Button hover color */
 }
 
-.circle {
+.circle-container { 
+    display: flex;
+    justify-content: space-evenly; /* Space out the circles evenly */
+    width: 100%; /* Full width of container */
+    padding: 10px; /* Add padding */
+}
+
+/* Circles for Second Box */
+.circle { 
     width: 50px; /* Set the size of the circle */
     height: 50px; /* Set the size of the circle */
     border-radius: 50%; /* Make them circular */
     border: 2px solid #24252b; /* Border for unselected circles */
     transition: border-color 0.3s; /* Smooth transition on hover/selection */
-    cursor: pointer; /* Make the cursor pointer when hovering */
+    cursor: pointer; /* Make the cursor pointer on hover */
+}
+
+.circle-break {
+  flex-basis: 100%;             /* Take full row */
+  height: 0;                    /* No vertical space */
+  margin: 0;                    /* No unintended spacing */
+  padding: 0;
 }
 
 /* Remove the hover effect */
@@ -528,7 +541,7 @@ colour-table {
     font-weight: bold; /* Bold text */
     color: #6e6d68; /* Transparent fill color */
     -webkit-text-stroke: 1px #24252b; /* Outline effect */
-    text-transform: uppercase; /* Uppercase text */
+    /*text-transform: uppercase;*/ /* Uppercase text */
     margin-right: 10px; /* Add spacing between price and button */
 }
 
@@ -602,8 +615,246 @@ colour-table {
         width: 90%; /* Take up 90% width on mobile screens */
         height: auto; /* Let height adjust naturally */
     }
-    .circle {
+    .circle, soap-circle {
         width: 40px; /* Slightly smaller circles for mobile */
         height: 40px;
     }
+}
+
+/*cart-button sticky*/
+#sticky-cart-container {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+}
+
+#sticky-cart-container.hidden {
+  display: none;
+}
+
+.remove-selection-btn {
+  background: #c62828;
+  color: white !important;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  height: 32px;
+  margin: 12px auto 0; /* top margin 12px, auto left/right for centering */
+  display: block;      /* make it block-level to apply auto margins */
+  -webkit-text-stroke: 0; /* REMOVE any stroke */
+  text-stroke: 0;
+}
+
+
+
+
+
+
+
+
+
+/* ===============================
+   ROOT
+   =============================== */
+:root {
+  --footer-gap: 5px;
+  --footer-height: 52px; /* adjust if footer text wraps */
+}
+
+/* ===============================
+   MAIN
+   =============================== */
+html {
+	height: -webkit-fill-available;
+}
+
+body {
+  padding-bottom: calc(
+    var(--footer-height) + 
+    var(--footer-gap) + 
+    env(safe-area-inset-bottom)
+  );
+}
+
+body::before {
+	content: "";
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-image: url("assets/background.webp");
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	z-index: -1;
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	font-family: Arial, sans-serif;
+	overflow-x: hidden;
+}
+
+/* ===============================
+   NAVIGATION BAR
+   =============================== */
+.nav-bar {
+	position: sticky;
+	top: 0;
+	z-index: 1000;
+
+	list-style-type: none;
+	margin: 0;
+	padding: 0 20px;
+	text-align: right;
+}
+
+.nav-bar li {
+	display: inline-block;
+}
+
+.page-current {
+	background-color: #5d5d5d;
+	color: #ffffff;
+}
+
+.page-current:hover {
+	box-shadow: 6px 5px 3px #ff0000;
+}
+
+.page-other {
+	background-color: #ffffff;
+	color: #ff0000;
+} 
+
+.page-other:hover {
+	background-color: #ff0000;
+	color: #ffffff;
+	box-shadow: 6px 5px 3px #ffffff;
+}
+
+.page-current, .page-other {
+	font-family: "Arial Black", sans-serif;
+	font-size: 14px;  
+	border-radius: 10px;
+	padding: 0.625rem 1.25rem; /* Proportional padding */
+	display: block;
+	text-align: center;
+	text-decoration: none;
+	box-shadow: 6px 5px 3px #ff0000;
+	font-weight: bold;
+	margin: 0.3125rem; /* Responsive margin */
+}
+
+/* ===============================
+   FOOTER
+   =============================== */
+.footer {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: calc(var(--footer-gap) + env(safe-area-inset-bottom));
+  background-color: #333333;
+  border-radius: 20px;
+  padding: 5px 20px;
+  white-space: nowrap;
+  max-width: 90%;
+  box-sizing: border-box;
+  text-align: center;
+  color: white;
+  z-index: 1000;
+}
+
+.footer-spacer {
+  height: calc(
+    52px + 
+    5px + 
+    env(safe-area-inset-bottom)
+  );
+}
+
+/* ===============================
+   TEXT
+   =============================== */
+/*Page Header*/
+.text-1 {
+	color: white;
+	text-align: center;
+	font-family: "Impact", sans-serif;
+	font-size: 48px;
+}
+
+/*Section Titles*/
+.text-2 {
+	color: white;
+	text-align: center;
+	font-family: "Arial Black", sans-serif;
+	font-size: 27.344px;
+	text-transform: uppercase;
+}
+
+/*Platform Name*/
+.text-3 {
+    font-size: 21.875px; /* Text size */
+    font-weight: bold; /* Bold text */
+    color: #6e6d68; /* Text color */
+    -webkit-text-stroke: 1px #24252b; /* Outline effect */
+    text-align: left; /* Align text to the left */
+    margin: 0; /* No margin to align with description */
+    text-decoration: none;
+}
+
+/*Social Tag*/
+.text-4 {
+    font-size: 17.5px; /* Text size */
+    color: #FF0000;
+    text-align: left; /* Align text to the left */
+    margin: 0; /* No margin for better alignment */
+    margin-top: 5px; /* Add slight space below the title */
+    text-decoration: none;
+}
+
+/*Main Text*/
+.text-5 {
+	color: white;
+	text-align: center;
+	font-family: "Arial Black", sans-serif;
+	font-size: 14px;
+}
+
+.text-5-1 {
+	color: #FF0000;
+	text-decoration: none;
+}
+
+.text-5-1:visited {
+	color: #FF0000;
+}
+
+.text-5-1:hover {
+	text-decoration: underline;
+}
+
+.text-5-2 {
+  
+}
+
+.text-6 {
+  font-size: 11.2px;
+}
+
+.text-6-1 {
+  font-size: 11.2px;
+  color: #FF0000;
+  text-decoration: none;
+}
+
+.text-6-1:hover {
+  text-decoration: underline;
 }
