@@ -586,11 +586,19 @@ html, body {
     margin-right: 10px; /* Control spacing between price and button */
 }
 
+.text-3-4 {
+    font-size: 21.875px; /* Adjusted size to 20px */
+    font-weight: bold !important; /* Force bold text */
+    color: #6e6d68; /* Transparent fill color */
+    -webkit-text-stroke: 1px #24252b; /* Outline effect */
+    margin: 10px; /* Control spacing between price and button */
+	text-align: center;
+}
 
 /*Social Tag*/
 .text-4 {
     font-size: 17.5px; /* Text size */
-    color: #FF0000;
+    color: #ff0000;
     text-align: left; /* Align text to the left */
     margin: 0; /* No margin for better alignment */
     margin-top: 5px; /* Add slight space below the title */
@@ -599,7 +607,7 @@ html, body {
 
 .text-4-1 {
     font-size: 17.5px; /* Text size */
-    color: #FF0000;
+    color: #ff0000;
     text-align: left; /* Align text to the left */
     margin: 0; /* No margin for better alignment */
     margin-top: 5px; /* Add slight space below the title */
@@ -609,7 +617,7 @@ html, body {
 
 .text-4-2 {
     font-size: 21.875px; /* Text size */
-    color: #FF0000;
+    color: #ff0000;
     text-align: left; /* Align text to the left */
     margin: 0; /* No margin for better alignment */
     margin-top: 5px; /* Add slight space below the title */
@@ -619,6 +627,17 @@ html, body {
 
 .text-4-2:hover {
 	text-decoration: underline;
+}
+
+/*white text*/
+.text-4-3 {
+    font-size: 21.875px; /* Text size */
+    color: #ffffff;
+    text-align: center; /* Align text to the left */
+    margin: 0; /* No margin for better alignment */
+    margin-top: 5px; /* Add slight space below the title */
+    text-decoration: none;
+	margin: 20px;
 }
 
 /*Main Text*/
@@ -678,4 +697,68 @@ html, body {
     height: 30%; /* Adjust height */
     object-fit: cover; /* Ensure proper scaling */
     transition: opacity 0.5s ease-in-out; /* Smooth transition effect */
+}
+
+/* ===============================
+   CHECKOUT CARD
+   =============================== */
+
+
+.box-wrapper-700 {
+max-width: 700px;
+margin: auto;
+}
+
+.cart {
+border: 1px solid #ccc;
+border-radius: 8px;
+padding: 20px;
+margin-bottom: 20px;
+background-color: white; /* Make cart box solid white */
+box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional: nicer visual */
+}
+
+ul {
+list-style: none;
+padding-left: 0;
+}
+
+li {
+display: flex;
+align-items: center;
+margin-bottom: 16px;
+}
+
+li img {
+width: 60px;
+height: auto;
+margin-right: 12px;
+border-radius: 4px;
+}
+
+.item-details {
+flex: 1;
+}
+
+.remove-btn {
+background: #c62828;
+color: white !important;
+border: none;
+padding: 6px 10px;
+border-radius: 4px;
+cursor: pointer;
+font-size: 12px;
+margin-left: 12px;
+height: 32px;
+-webkit-text-stroke: 0; /* REMOVE any stroke */
+text-stroke: 0; 
+}
+
+.empty-message {
+text-align: center;
+padding: 40px;
+}
+
+#paypal-button-container {
+margin-top: 20px;
 }
