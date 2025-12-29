@@ -262,24 +262,20 @@ document.querySelectorAll(".soap-order-button").forEach(button => {
   });
 });
 
-const cartNavItem = document.getElementById('cart-nav-item');
-const cartCountSpan = document.getElementById('cart-count');
-
 function updateCartNav() {
   const cart = JSON.parse(localStorage.getItem('cart')) || [];
   const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
 
-  if (totalQty > 0) {
-    cartCountSpan.textContent = totalQty;
-    cartNavItem.style.display = 'list-item';
-  } else {
-    cartNavItem.style.display = 'none';
-  }
+  document.querySelectorAll('.cart-nav-item').forEach(item => {
+    item.classList.toggle('hidden', totalQty === 0);
+  });
+
+  document.querySelectorAll('.cart-count').forEach(span => {
+    span.textContent = totalQty;
+  });
 }
 
 updateCartNav();
-document.getElementById('cart-nav-item').classList.remove('hidden');
-document.getElementById('cart-count').textContent = 2;
 
 // ==============================
 // Product Info Fetching

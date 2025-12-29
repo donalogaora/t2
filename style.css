@@ -1,96 +1,3 @@
-html, body {
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  min-height: 100vh;
-}
-
-body {
-  background-image: url("assets/background.webp");
-  background-repeat: no-repeat;
-  background-position: right top;
-  background-attachment: fixed;
-  background-size: cover;
-}
-
-/*custom elements*/
-page-title, titles {
-  display: block;
-  align-items: center; /* Center content horizontally */
-}
-
-/*h1*/
-page-title {
-  color: white;
-  text-align: center;
-  font-family: "Impact", sans-serif;
-  font-size: 64px;
-}
-
-/*h3*/
-titles {
-  color: white;
-  text-align: center;
-  font-family: "Arial Black", sans-serif;
-  font-size: 24px;
-  text-transform: uppercase;
-}
-
-h4 {
-  color: white;
-  text-align: center;
-  font-family: "Arial Black", sans-serif;
-  font-size: 12px;
-}
-
-tandc-text {
-  color: white;
-  text-align: center;
-  font-family: "Arial Black", sans-serif;
-  font-size: 12px;
-  padding: 15px;
-  max-width: 90%; /* Ensures the text doesn't span the entire width */
-  margin: 0 auto; /* Centers the text block within the container */
-}
-
-.tandc-text-bold {
-  color: white;
-  text-align: center;
-  font-family: "Arial Black", sans-serif;
-  font-size: 12px;
-  padding: 15px;
-  max-width: 90%; /* Ensures the text doesn't span the entire width */
-  margin: 0 auto; /* Centers the text block within the container */
-  font-weight: bold; /* Ensures the text is bold */
-}
-
-/* Adjust padding for mobile screens */
-@media (max-width: 600px) {
-  tandc-text, tandc-text-bold {
-    padding: 10px;  /* Smaller padding for phone screens */
-  }
-}
-
-/*h6*/
-tandcfooter {
-  color: white;
-  text-align: center;
-  font-family: "Arial", sans-serif;
-  font-size: 10px;
-  position: fixed;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #333333; /* Background color */
-  border-radius: 20px; /* Rounded corners for an oval effect */
-  padding: 5px 20px; /* Adds padding around the text */
-  display: inline-block; /* Ensure the background wraps only around the text */
-  white-space: nowrap; /* Prevent wrapping inside the footer */
-  max-width: 90%; /* Prevent the footer from stretching too wide */
-  box-sizing: border-box; /* Include padding in the width calculation */
-}
 
 /* Text and link styles for T&C and designer name */
 .footer-tc-text, .designer {
@@ -123,21 +30,6 @@ footer a.footer-tc-text {
 
 /* Hover effect on T&C text */
 .footer-tc-text:hover {
-  color: #24252b; /* Color change on hover */
-}
-
-/* Shop T&C Text Style */
-.shop-tc-text {
-  font-size: 20px; /* Adjusted size to 20px */
-  font-weight: bold; /* Bold text */
-  color: red; /* Transparent fill color */
-  text-decoration: underline; /* Add underline */
-  cursor: pointer; /* Pointer cursor to indicate it's clickable */
-  padding-left: 10px; /* Space between "Order" and "T&C" */
-}
-
-/* Hover effect for Shop T&C text */
-.shop-tc-text:hover {
   color: #24252b; /* Color change on hover */
 }
 
@@ -223,28 +115,6 @@ colour-table {
   display: table;
 }
 
-/* Updated Clearfix - Now Sticky */
-/*.clearfix {
-  content: "";
-  clear: both;
-  display: table;
-  position: sticky; /* Makes navbar stick to the top */
- /* top: 0; /* Stays at the very top */
-  /*background: white; /* Ensures it's visible */
-  /*z-index: 1000; /* Keeps it above other elements */
-  /*padding: 10px 0; /* Adds some spacing */
-  /*box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow effect */
-/*}*/
-
-/* Hide elements with the hidden class */
-.hidden {
-  display: none !important;
-}
-
-#cart-nav-item {
-  width: auto;
-}
-
 /* Ensure all nav items use consistent layout */
 .nav-list {
   display: flex;
@@ -311,85 +181,6 @@ colour-table {
   text-align: center;
 }
 
-/* Bio Page Stuff */
-.bio-card {
-    width: 400px; /* Fixed width */
-    height: 120px; /* Fixed height for the card */
-    background-color: #ffffff; /* White background */
-    border-radius: 50px; /* Fully rounded corners */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    overflow: hidden;
-    display: flex;
-    flex-direction: row; /* Arrange items in a row */
-    margin: 0 auto; /* Center the card horizontally */
-    position: relative;
-    align-items: center; /* Vertically center the content */
-    padding: 10px; /* Padding inside the card */
-    gap: 10px; /* Space between the image and content */
-    box-sizing: border-box; /* Ensure padding doesn't affect size */
-}
-
-.bio-card-image {
-    flex-shrink: 0; /* Prevent the image from shrinking */
-    width: 100px; /* Fixed width for the image */
-    height: 100px; /* Fixed height for the image */
-    border-radius: 50%; /* Make the image fully rounded */
-    object-fit: cover; /* Ensure proper scaling */
-    padding: 5px; /* Padding around the image */
-    background-color: #f0f0f0; /* Optional: Background around the image */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for the image */
-}
-
-.bio-card-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Center content vertically */
-    align-items: flex-start; /* Align text to the left */
-    padding: 10px; /* Inner padding for the content */
-    flex: 1; /* Let the content take the remaining space */
-    overflow: hidden; /* Prevent content overflow */
-}
-
-.bio-card-title {
-    font-size: 20px; /* Text size */
-    font-weight: bold; /* Bold text */
-    color: #6e6d68; /* Text color */
-    -webkit-text-stroke: 1px #24252b; /* Outline effect */
-    text-align: left; /* Align text to the left */
-    margin: 0; /* No margin to align with description */
-    text-decoration: none;
-}
-
-.bio-card-description {
-    font-size: 14px; /* Text size */
-    color: red;
-    text-align: left; /* Align text to the left */
-    margin: 0; /* No margin for better alignment */
-    margin-top: 5px; /* Add slight space below the title */
-    text-decoration: none;
-}
-
-/* Responsive adjustments for mobile screens */
-@media (max-width: 600px) {
-    .bio-card {
-        width: 90%; /* Take up 90% width on mobile screens */
-        height: auto; /* Let height adjust naturally */
-        flex-direction: row; /* Keep image and text side by side */
-        align-items: center; /* Center items vertically */
-        padding: 15px;
-    }
-
-    .bio-card-image {
-        width: 80px; /* Smaller image on mobile */
-        height: 80px;
-        margin-bottom: 0; /* No extra space below the image */
-    }
-
-    .bio-card-content {
-        align-items: flex-start; /* Align text to the left on mobile */
-        text-align: left; /* Ensure left-aligned text */
-    }
-}
 
 /* Shop Stuff */
 .shop-card {
@@ -402,32 +193,6 @@ colour-table {
     flex-direction: column;
     margin: 0 auto; /* Center the card horizontally */
     position: relative;
-}
-
-.shop-card-title {
-    font-size: 24px; /* Text size */
-    font-weight: bold; /* Bold text */
-    color: #6e6d68; /* Transparent fill color */
-    -webkit-text-stroke: 1px #24252b; /* Outline effect */
-    text-align: center; /* Center the text horizontally */
-    margin: 10px 0; /* Space around the title */
-    padding: 0 20px; /* Add space on left and right */
-}
-
-.shop-card-description {
-    font-size: 18px; /* Text size */
-    /*font-weight: bold; /* Bold text */
-    color: #6e6d68; /* Transparent fill color */
-    -webkit-text-stroke: 1px #24252b; /* Outline effect */
-    text-align: center; /* Center the text horizontally */
-    margin: 10px 0; /* Space around the title */
-}
-
-.shop-card-image {
-    width: 100%; /* Adjust image to fit card width */
-    height: 30%; /* Adjust height */
-    object-fit: cover; /* Ensure proper scaling */
-    transition: opacity 0.5s ease-in-out; /* Smooth transition effect */
 }
 
 .shop-card-content {
@@ -445,14 +210,6 @@ colour-table {
     align-items: center; /* Center the items vertically */
     width: 100%; /* Full width of the container */
     gap: 15px; /* Space between the price and button */
-}
-
-.shop-money-tag {
-    font-size: 20px; /* Adjusted size to 20px */
-    font-weight: bold !important; /* Force bold text */
-    color: #6e6d68; /* Transparent fill color */
-    -webkit-text-stroke: 1px #24252b; /* Outline effect */
-    margin-right: 10px; /* Control spacing between price and button */
 }
 
 .shop-order-button, .soap-order-button {
@@ -499,18 +256,6 @@ colour-table {
   padding: 0;
 }
 
-/* Remove the hover effect */
-/*.circle:hover {
-    border-color: inherit; /* No change in border color on hover */
-/*}
-
-/* On Selection */
-/*.circle.selected {
-    border-color: #FCBB32; /* Green border when selected */
-/*}
-
-/* Custom Orders */
-/* Updated Shop Card for Second Box */
 .shop-card_2 {
     width: 420px; /* Fixed width */
     background-color: #ffffff; /* White background */
@@ -612,18 +357,6 @@ colour-table {
     background-color: #5d5d5d; /* Button hover color */
 }
 
-.shop-tc-text_2 {
-    font-size: 20px; /* Adjust text size */
-    font-weight: bold; /* Bold text */
-    color: red; /* Text color */
-    text-decoration: underline; /* Add underline */
-    cursor: pointer; /* Pointer cursor */
-}
-
-.shop-tc-text_2:hover {
-    color: #24252b; /* Color change on hover */
-}
-
 /* Responsive adjustments for mobile screens */
 @media (max-width: 600px) {
     .shop-card, .shop-card_2 {
@@ -661,4 +394,288 @@ colour-table {
   display: block;      /* make it block-level to apply auto margins */
   -webkit-text-stroke: 0; /* REMOVE any stroke */
   text-stroke: 0;
+}
+
+
+
+
+
+/* ===============================
+   ROOT
+   =============================== */
+:root {
+  --footer-gap: 5px;
+  --footer-height: 52px; /* adjust if footer text wraps */
+}
+
+/* ===============================
+   MAIN
+   =============================== */
+html {
+	height: -webkit-fill-available;
+}
+
+body {
+  padding-bottom: calc(
+    var(--footer-height) + 
+    var(--footer-gap) + 
+    env(safe-area-inset-bottom)
+  );
+}
+
+body::before {
+	content: "";
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-image: url("assets/background.webp");
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	z-index: -1;
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	font-family: Arial, sans-serif;
+	overflow-x: hidden;
+}
+
+/* ===============================
+   NAVIGATION BAR
+   =============================== */
+.nav-bar {
+	position: sticky;
+	top: 0;
+	z-index: 1000;
+
+	list-style-type: none;
+	margin: 0;
+	padding: 0 20px;
+	text-align: right;
+}
+
+.nav-bar li {
+	display: inline-block;
+}
+
+.page-current {
+	background-color: #5d5d5d;
+	color: #ffffff;
+}
+
+.page-current:hover {
+	box-shadow: 6px 5px 3px #ff0000;
+}
+
+.page-other {
+	background-color: #ffffff;
+	color: #ff0000;
+} 
+
+.page-other:hover {
+	background-color: #ff0000;
+	color: #ffffff;
+	box-shadow: 6px 5px 3px #ffffff;
+}
+
+.page-current, .page-other {
+	font-family: "Arial Black", sans-serif;
+	font-size: 14px;  
+	border-radius: 10px;
+	padding: 0.625rem 1.25rem; /* Proportional padding */
+	display: block;
+	text-align: center;
+	text-decoration: none;
+	box-shadow: 6px 5px 3px #ff0000;
+	font-weight: bold;
+	margin: 0.3125rem; /* Responsive margin */
+}
+
+/* ===============================
+   FOOTER
+   =============================== */
+.footer {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: calc(var(--footer-gap) + env(safe-area-inset-bottom));
+  background-color: #333333;
+  border-radius: 20px;
+  padding: 5px 20px;
+  white-space: nowrap;
+  max-width: 90%;
+  box-sizing: border-box;
+  text-align: center;
+  color: white;
+  z-index: 1000;
+}
+
+.footer-spacer {
+  height: calc(
+    52px + 
+    5px + 
+    env(safe-area-inset-bottom)
+  );
+}
+
+/* ===============================
+   TEXT
+   =============================== */
+/*Page Header*/
+.text-1 {
+	color: white;
+	text-align: center;
+	font-family: "Impact", sans-serif;
+	font-size: 48px;
+}
+
+/*Section Titles*/
+.text-2 {
+	color: white;
+	text-align: center;
+	font-family: "Arial Black", sans-serif;
+	font-size: 27.344px;
+	text-transform: uppercase;
+}
+
+/*Platform Name*/
+.text-3 {
+    font-size: 21.875px; /* Text size */
+    font-weight: bold; /* Bold text */
+    color: #6e6d68; /* Text color */
+    -webkit-text-stroke: 1px #24252b; /* Outline effect */
+    text-align: left; /* Align text to the left */
+    margin: 0; /* No margin to align with description */
+    text-decoration: none;
+}
+
+/*With Allignment For Title*/
+.text-3-1 {
+	font-size: 21.875px; /* Text size */
+    font-weight: bold; /* Bold text */
+    color: #6e6d68; /* Text color */
+    -webkit-text-stroke: 1px #24252b; /* Outline effect */
+    text-decoration: none;
+	text-align: center;
+    margin: 10px 0;
+    padding: 0 20px;
+}
+
+/*Change of Size*/
+.text-3-2 {
+	font-size: 17.5px; /* Text size */
+    font-weight: bold; /* Bold text */
+    color: #6e6d68; /* Text color */
+    -webkit-text-stroke: 1px #24252b; /* Outline effect */
+    text-decoration: none;
+	text-align: center;
+    margin: 10px 0;
+    padding: 0 20px;
+}
+
+.text-3-3 {
+    font-size: 21.875px; /* Adjusted size to 20px */
+    font-weight: bold !important; /* Force bold text */
+    color: #6e6d68; /* Transparent fill color */
+    -webkit-text-stroke: 1px #24252b; /* Outline effect */
+    margin-right: 10px; /* Control spacing between price and button */
+}
+
+
+/*Social Tag*/
+.text-4 {
+    font-size: 17.5px; /* Text size */
+    color: #FF0000;
+    text-align: left; /* Align text to the left */
+    margin: 0; /* No margin for better alignment */
+    margin-top: 5px; /* Add slight space below the title */
+    text-decoration: none;
+}
+
+.text-4-1 {
+    font-size: 17.5px; /* Text size */
+    color: #FF0000;
+    text-align: left; /* Align text to the left */
+    margin: 0; /* No margin for better alignment */
+    margin-top: 5px; /* Add slight space below the title */
+    text-decoration: none;
+	font-weight: bold;
+}
+
+.text-4-2 {
+    font-size: 21.875px; /* Text size */
+    color: #FF0000;
+    text-align: left; /* Align text to the left */
+    margin: 0; /* No margin for better alignment */
+    margin-top: 5px; /* Add slight space below the title */
+    text-decoration: none;
+	font-weight: bold;
+}
+
+.text-4-2:hover {
+	text-decoration: underline;
+}
+
+/*Main Text*/
+.text-5 {
+	color: white;
+	text-align: center;
+	font-family: "Arial Black", sans-serif;
+	font-size: 14px;
+}
+
+.text-5-1 {
+	color: #FF0000;
+	text-decoration: none;
+}
+
+.text-5-1:visited {
+	color: #FF0000;
+}
+
+.text-5-1:hover {
+	text-decoration: underline;
+}
+
+.text-5-2 {
+  
+}
+
+/*Smaller Text*/
+.text-6 {
+  font-size: 11.2px;
+}
+
+.text-6-1 {
+  font-size: 11.2px;
+  color: #FF0000;
+  text-decoration: none;
+}
+
+.text-6-1:hover {
+  text-decoration: underline;
+}
+
+/* ===============================
+   SHOP CARD
+   =============================== */
+/* Hide elements with the hidden class */
+.hidden {
+  display: none !important;
+}
+
+.cart-nav-item {
+  width: auto;
+}  
+ 
+.shop-card-image {
+    width: 100%; /* Adjust image to fit card width */
+    height: 30%; /* Adjust height */
+    object-fit: cover; /* Ensure proper scaling */
+    transition: opacity 0.5s ease-in-out; /* Smooth transition effect */
 }
