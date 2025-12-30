@@ -118,7 +118,7 @@
 				  cart.forEach(item => {
 					const li = document.createElement('li');
 					li.innerHTML = `
-					  <img src="${item.image || ''}" alt="${item.name} - ${item.color}">
+					  <img src="${item.image || ''}" alt="${item.name} - ${item.colour}">
 					  <div class="item-details">
 						<div class="product-description-bold">${item.name}</div>
 						<div class="product-description" style="
@@ -127,7 +127,7 @@
 						  color: #6e6d68;
 						  -webkit-text-stroke: 0.7px #24252b;
 						  margin: 10px 0;
-						">Colour: ${item.color}</div>
+						">Colour: ${item.colour}</div>
 						<div class="product-description" style="
 						  font-weight: bold;
 						  font-size: 15px;
@@ -136,7 +136,7 @@
 						  margin: 10px 0;
 						">Price: €${item.price.toFixed(2)} x ${item.qty}</div>
 					  </div>
-					  <button class="remove-btn" data-id="${item.id}" data-color="${item.color}">Remove</button>
+					  <button class="remove-btn" data-id="${item.id}" data-colour="${item.colour}">Remove</button>
 					`;
 					cartItemsContainer.appendChild(li);
 					subtotal += item.price * item.qty;
@@ -151,10 +151,10 @@
 				document.getElementById('cart-items').addEventListener('click', (event) => {
 				  if (event.target.classList.contains('remove-btn')) {
 					const id = event.target.getAttribute('data-id');
-					const color = event.target.getAttribute('data-color');
+					const colour = event.target.getAttribute('data-colour');
 				
 					// Find the item index
-					const index = cart.findIndex(item => item.id === id && item.color === color);
+					const index = cart.findIndex(item => item.id === id && item.colour === colour);
 					if (index > -1) {
 					  if (cart[index].qty > 1) {
 						cart[index].qty -= 1;  // Just reduce qty by 1
@@ -173,7 +173,7 @@
 					const orderItems = cart.map(item => ({
 					  productId: item.id,
 					  quantity: item.qty,
-					  color: item.color // include colour here
+					  color: item.colour // include colour here
 					}));
 			  
 					return fetch(`${BACKEND_URL}/create-order`, {

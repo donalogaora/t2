@@ -123,7 +123,7 @@ document.querySelectorAll('.shop-card').forEach(card => {
 });
 
 // ==============================
-// Handle Color Selections
+// Handle Colour Selections
 // ==============================
 
 document.querySelectorAll('.circle-container').forEach(container => {
@@ -139,15 +139,15 @@ document.querySelectorAll('.circle-container').forEach(container => {
 
   container.querySelectorAll('.circle').forEach(circle => {
     circle.addEventListener('click', () => {
-      const selectedColor = circle.getAttribute('data-color');
+      const selectedColour = circle.getAttribute('data-colour');
       let imagePath;
 
       if (productId === '1A') {
-        imagePath = `/assets/shop/${selectedColor}_universal_phone_stand.webp`;
+        imagePath = `/assets/shop/${selectedColour}_universal_phone_stand.webp`;
       } else if (productId === '2A') {
-        imagePath = `/assets/shop/${selectedColor}_aquadry_soap_cradle.webp`;
+        imagePath = `/assets/shop/${selectedColour}_aquadry_soap_cradle.webp`;
       } else if (productId === '3A') {
-        imagePath = `/assets/shop/${selectedColor}_securefit_hose-arm_clip_adapter_for_miele_wide_upholstery_nozzle.webp`;
+        imagePath = `/assets/shop/${selectedColour}_securefit_hose-arm_clip_adapter_for_miele_wide_upholstery_nozzle.webp`;
       }
 
       imageElement.src = imagePath;
@@ -155,7 +155,7 @@ document.querySelectorAll('.circle-container').forEach(container => {
       clearInterval(carousel.interval);
       carousel.isActive = false;
       imageElement.style.opacity = 1;
-      imageElement.setAttribute('data-selected-color', selectedColor);
+      imageElement.setAttribute('data-selected-colour', selectedColour);
 
       // Highlight selected circle
       container.closest('.shop-card').querySelectorAll('.circle').forEach(c => c.classList.remove('selected'));
@@ -177,7 +177,7 @@ document.querySelectorAll('.remove-selection-btn').forEach(removeBtn => {
     clearInterval(carousel.interval);
     carousel.index = 0;
     carousel.imageElement.src = carousel.images[0];
-    carousel.imageElement.removeAttribute('data-selected-color');
+    carousel.imageElement.removeAttribute('data-selected-colour');
     carousel.isActive = true;
     startCarousel(productId, carousel.imageElement);
 
@@ -197,23 +197,23 @@ document.querySelectorAll('.shop-order-button').forEach(orderButton => {
   orderButton.addEventListener('click', function () {
     const productId = orderButton.getAttribute('data-product-id');
     const imageElement = document.querySelector(`#product-image-${productId}`);
-    const color = imageElement?.getAttribute('data-selected-color');
+    const colour = imageElement?.getAttribute('data-selected-colour');
 
-    if (!color) {
-      alert('Please select a color first!');
+    if (!colour) {
+      alert('Please select a colour first!');
       return;
     }
 
     const productName = getProductField(productId, 'product_name') || 'Unnamed Product';
     const price = parseFloat(getProductField(productId, 'price')) || 0;
-    const formattedColor = color.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+    const formattedColour = colour.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
     let imagePath;
     if (productId === '1A') {
-      imagePath = `/assets/shop/${color}_universal_phone_stand.webp`;
+      imagePath = `/assets/shop/${colour}_universal_phone_stand.webp`;
     } else if (productId === '2A') {
-      imagePath = `/assets/shop/${color}_aquadry_soap_cradle.webp`;
+      imagePath = `/assets/shop/${colour}_aquadry_soap_cradle.webp`;
     } else if (productId === '3A') {
-      imagePath = `/assets/shop/${color}_securefit_hose-arm_clip_adapter_for_miele_wide_upholstery_nozzle.webp`;
+      imagePath = `/assets/shop/${colour}_securefit_hose-arm_clip_adapter_for_miele_wide_upholstery_nozzle.webp`;
     } else {
       // fallback or error
     }
@@ -221,14 +221,14 @@ document.querySelectorAll('.shop-order-button').forEach(orderButton => {
     const cartItem = {
       id: productId,
       name: productName,
-      color: formattedColor,
+      colour: formattedColour,
       price: price,
       qty: 1,
       image: imagePath
     };
 
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    const existingIndex = cart.findIndex(item => item.id === productId && item.color === formattedColor);
+    const existingIndex = cart.findIndex(item => item.id === productId && item.colour === formattedColour);
 
     if (existingIndex > -1) {
       cart[existingIndex].qty += 1;
@@ -238,7 +238,7 @@ document.querySelectorAll('.shop-order-button').forEach(orderButton => {
 
     localStorage.setItem('cart', JSON.stringify(cart));
     updateCartNav();
-    alert(`${formattedColor} ${productName} added to cart!`);
+    alert(`${formattedColour} ${productName} added to cart!`);
   });
 });
 
@@ -329,7 +329,7 @@ function fetchAllProducts() {
 document.addEventListener("DOMContentLoaded", () => {
   fetchAllProducts();
 
-  // Attach remove-color-button listeners after DOM fully loaded
+  // Attach remove-colour-button listeners after DOM fully loaded
   document.addEventListener('click', function (e) {
     if (!e.target.matches('.remove-selection-btn')) return;
   
@@ -338,12 +338,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const carousel = productCarousels[productId];
     if (!carousel) return;
   
-    console.log("Remove Color clicked for", productId); // ✅ Debug log
+    console.log("Remove Colour clicked for", productId); // ✅ Debug log
   
     clearInterval(carousel.interval);
     carousel.index = 0;
     carousel.imageElement.src = carousel.images[0];
-    carousel.imageElement.removeAttribute('data-selected-color');
+    carousel.imageElement.removeAttribute('data-selected-colour');
     carousel.isActive = true;
     startCarousel(productId, carousel.imageElement);
   
