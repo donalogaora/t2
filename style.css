@@ -762,3 +762,48 @@ padding: 40px;
 #paypal-button-container {
 margin-top: 20px;
 }
+
+.cart-items {
+  font-weight: bold;
+  font-size: 18px;
+  color: #6e6d68;
+  -webkit-text-stroke: 1px #24252b;
+  margin: 10px 0;
+  list-style: none;        /* optional: removes bullets */
+  padding-left: 0;         /* optional: cleaner alignment */
+}
+
+.cart-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin: 15px 0;
+}
+
+.cart-item-image {
+  width: 80px;
+  height: auto;
+  border-radius: 6px;
+}
+
+.item-details {
+  flex: 1;
+}
+
+/* Shared cart text styling */
+.cart-item-meta {
+  font-weight: bold;
+  font-size: 15px;
+  color: #6e6d68;
+  -webkit-text-stroke: 0.7px #24252b;
+  margin: 10px 0;
+}
+
+/* Optional: empty cart message */
+.empty-message {
+  font-weight: bold;
+  font-size: 18px;
+  color: #6e6d68;
+  text-align: center;
+  margin: 20px 0;
+}
