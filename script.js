@@ -205,6 +205,7 @@ document.querySelectorAll('.shop-order-button').forEach(orderButton => {
     }
 
     const productName = getProductField(productId, 'product_name') || 'Unnamed Product';
+	const usedMaterial = getProductField(productId, 'material') || 'Unknown Material';
     const price = parseFloat(getProductField(productId, 'price')) || 0;
     const formattedColour = colour.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
     let imagePath;
@@ -222,6 +223,7 @@ document.querySelectorAll('.shop-order-button').forEach(orderButton => {
       id: productId,
       name: productName,
       colour: formattedColour,
+	  material: usedMaterial,
       price: price,
       qty: 1,
       image: imagePath
