@@ -128,6 +128,14 @@
 						  -webkit-text-stroke: 0.7px #24252b;
 						  margin: 10px 0;
 						">Colour: ${item.colour}</div>
+						<br>
+						<div class="product-description" style="
+						  font-weight: bold;
+						  font-size: 15px;
+						  color: #6e6d68;
+						  -webkit-text-stroke: 0.7px #24252b;
+						  margin: 10px 0;
+						">Material: ${item.material}</div>
 						<div class="product-description" style="
 						  font-weight: bold;
 						  font-size: 15px;
@@ -167,8 +175,8 @@
 				  }
 				});
 				
-				//const promoCodes = JSON.parse(localStorage.getItem('promoCodes')) || []; //['WELCOME', 'HI10']
-				const promoCodes = ['WELCOME10', 'FREESHIP'];
+				const promoCodes = JSON.parse(localStorage.getItem('promoCodes')) || []; //['WELCOME', 'HI10']
+				//const promoCodes = ['WELCOME10', 'FREESHIP'];
 			  
 				paypal.Buttons({
 				  createOrder: function(data, actions) {
