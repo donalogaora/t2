@@ -166,20 +166,26 @@
 					}
 				  }
 				});
-		  
+				
+				const promoCodes = JSON.parse(localStorage.getItem('promoCodes')) || []; //['WELCOME', 'HI10']
+				//const promoCodes = ['WELCOME10', 'FREESHIP'];
 			  
 				paypal.Buttons({
 				  createOrder: function(data, actions) {
 					const orderItems = cart.map(item => ({
 					  productId: item.id,
 					  quantity: item.qty,
-					  color: item.colour // include colour here
+					  colour: item.colour, // include colour here
+					  material: item.material
 					}));
 			  
 					return fetch(`${BACKEND_URL}/create-order`, {
 					  method: 'POST',
 					  headers: { 'Content-Type': 'application/json' },
-					  body: JSON.stringify({ items: orderItems })
+					  body: JSON.stringify({
+					    items: orderItems,
+						promoCodes
+					  })
 					})
 					.then(res => res.json())
 					.then(data => {
