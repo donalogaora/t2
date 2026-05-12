@@ -62,10 +62,17 @@
 			<div class="cart">
 				<h2 class="text-3-1">Your Cart</h2>
 				<ul id="cart-items" class="cart-items product-description"></ul>
-				<p class="text-3-4">Total: €<span>0.00</span></p>
 				<p class="text-3-2">
-					<strong>Note:</strong> Postage starts at €4.50, it is added on during payment process.
+					<strong>Shipping:</strong> €<span>0.00</span>
 				</p>
+				<p class="text-3-4">
+					Total: €<span id="shipping-amount">0.00</span>
+				</p>
+				<!--
+				<p class="text-3-2">
+					<strong>Note:</strong> Postage starts at €4.10, it is added on during payment process.
+				</p>
+				-->
 			</div>
 			<div id="paypal-button-container"></div>
 			<script src="checkout.js"></script>

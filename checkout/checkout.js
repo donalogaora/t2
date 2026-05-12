@@ -19,12 +19,14 @@ async function fetchPostage(subtotal) {
 async function renderCart() {
   const cartItemsContainer = document.getElementById('cart-items');
   const totalEl = document.querySelector('.text-3-4 span');
+  const shippingEl = document.getElementById('shipping-amount');
 
   if (!cartItemsContainer) return;
 
   if (cart.length === 0) {
 	cartItemsContainer.innerHTML = '<p class="empty-message">Your cart is empty.</p>';
 	totalEl.textContent = '0.00';
+    shippingEl.textContent = '0.00';
 	return;
   }
 
@@ -69,7 +71,8 @@ async function renderCart() {
 
   const postage = await fetchPostage(subtotal);
   const total = subtotal + postage;
-
+  
+  shippingEl.textContent = postage.toFixed(2);
   totalEl.textContent = total.toFixed(2);
 }
 
