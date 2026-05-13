@@ -101,6 +101,7 @@ document.querySelectorAll('.shop-card').forEach(card => {
   const productId = card.getAttribute('data-product-id');
   const imageElement = card.querySelector('.shop-card-image');
   const images = productImages[productId];
+  
   // Preload all carousel images for this product
   images.forEach(src => {
     const img = new Image();
