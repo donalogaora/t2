@@ -149,6 +149,8 @@ document.querySelectorAll('.circle-container').forEach(container => {
         imagePath = `/assets/shop/${selectedColour}_aquadry_soap_cradle.webp`;
       } else if (productId === '3A') {
         imagePath = `/assets/shop/${selectedColour}_securefit_hose-arm_clip_adapter_for_miele_wide_upholstery_nozzle.webp`;
+      } else if (productId === '4A') {
+        imagePath = `/assets/shop/${selectedColour}_edgecarry_wallet.webp`;
       }
 
       imageElement.src = imagePath;
@@ -216,6 +218,8 @@ document.querySelectorAll('.shop-order-button').forEach(orderButton => {
       imagePath = `/assets/shop/${colour}_aquadry_soap_cradle.webp`;
     } else if (productId === '3A') {
       imagePath = `/assets/shop/${colour}_securefit_hose-arm_clip_adapter_for_miele_wide_upholstery_nozzle.webp`;
+    } else if (productId === '4A') {
+      imagePath = `/assets/shop/${colour}_edgecarry_wallet.webp`;
     } else {
       // fallback or error
     }
