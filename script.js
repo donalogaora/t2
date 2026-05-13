@@ -101,27 +101,6 @@ document.querySelectorAll('.shop-card').forEach(card => {
   const productId = card.getAttribute('data-product-id');
   const imageElement = card.querySelector('.shop-card-image');
   const images = productImages[productId];
-  
-  
-  if (!images || !imageElement) return;
-
-  // Special case for EdgeCarry Wallet
-  if (productId === '4A') {
-    setTimeout(() => {
-      imageElement.style.transition = "opacity 1s";
-      imageElement.style.opacity = 0;
-
-      setTimeout(() => {
-        imageElement.src = images[0];
-        imageElement.style.opacity = 1;
-      }, 1000);
-
-    }, 2000); // delay before switching
-
-    return;
-  }
-  
-  
   // Preload all carousel images for this product
   images.forEach(src => {
     const img = new Image();
