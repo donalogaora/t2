@@ -97,8 +97,10 @@ function startCarousel(productId, imageElement) {
 // Initialize Carousels
 // ==============================
 
-document.querySelectorAll('.shop-card').forEach(card => {
+document.querySelectorAll('.shop-card').forEach(card => {	
   const productId = card.getAttribute('data-product-id');
+    // Skip carousel for EdgeCarry Wallet
+  if (productId === '4A') return;
   const imageElement = card.querySelector('.shop-card-image');
   const images = productImages[productId];
   // Preload all carousel images for this product
