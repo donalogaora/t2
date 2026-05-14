@@ -201,7 +201,6 @@ colour-table {
     justify-content: center;
     align-items: center;
     padding: 15px;
-	/*padding: clamp(2px, 4vw, 15px);*/
     height: 70%; /* Content takes up the remaining card height */
 }
 
@@ -532,10 +531,7 @@ html, body {
 	color: white;
 	text-align: center;
 	font-family: "Impact", sans-serif;
-	/*font-size: 48px;*/
-	/* responsive font size */
-	font-size: clamp(27px, 8vw, 48px);
-	word-wrap: break-word;	
+	font-size: 48px;
 }
 
 /*Section Titles*/
@@ -543,10 +539,8 @@ html, body {
 	color: white;
 	text-align: center;
 	font-family: "Arial Black", sans-serif;
-	/*font-size: 27.344px;*/
+	font-size: 27.344px;
 	text-transform: uppercase;
-	font-size: clamp(20px, 8vw, 27.344px);
-	word-wrap: break-word;	
 }
 
 /*Platform Name*/
@@ -581,8 +575,7 @@ html, body {
     text-decoration: none;
 	text-align: center;
     margin: 10px 0;
-    /*padding: 0 20px;*/
-	padding: clamp(2px, 6vw, 20px);
+    padding: 0 20px;
 }
 
 .text-3-3 {
