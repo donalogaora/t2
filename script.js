@@ -3,7 +3,7 @@
 // ==============================
 
 const productImages = {
-  '1A': [
+  '1Z': [
     'assets/shop/black_universal_phone_stand.webp',
     'assets/shop/white_universal_phone_stand.webp',
     'assets/shop/space_grey_universal_phone_stand.webp',
@@ -64,7 +64,7 @@ const productImages = {
     //'/assets/shop/pink_securefit_hose-arm_clip_adapter_for_miele_wide_upholstery_nozzle.webp',
     'assets/shop/red_securefit_hose-arm_clip_adapter_for_miele_wide_upholstery_nozzle.webp'
   ],
-  '4A': [
+  '4Z': [
     'assets/shop/black_edgecarry_wallet.webp'
   ]
   // Add more productId/image arrays here
@@ -143,13 +143,13 @@ document.querySelectorAll('.circle-container').forEach(container => {
       const selectedColour = circle.getAttribute('data-colour');
       let imagePath;
 
-      if (productId === '1A') {
+      if (productId === '1Z') {
         imagePath = `/assets/shop/${selectedColour}_universal_phone_stand.webp`;
       } else if (productId === '2A') {
         imagePath = `/assets/shop/${selectedColour}_aquadry_soap_cradle.webp`;
       } else if (productId === '3A') {
         imagePath = `/assets/shop/${selectedColour}_securefit_hose-arm_clip_adapter_for_miele_wide_upholstery_nozzle.webp`;
-      } else if (productId === '4A') {
+      } else if (productId === '4Z') {
         imagePath = `/assets/shop/${selectedColour}_edgecarry_wallet.webp`;
       }
 
@@ -212,13 +212,13 @@ document.querySelectorAll('.shop-order-button').forEach(orderButton => {
     const price = parseFloat(getProductField(productId, 'price')) || 0;
     const formattedColour = colour.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
     let imagePath;
-    if (productId === '1A') {
+    if (productId === '1Z') {
       imagePath = `/assets/shop/${colour}_universal_phone_stand.webp`;
     } else if (productId === '2A') {
       imagePath = `/assets/shop/${colour}_aquadry_soap_cradle.webp`;
     } else if (productId === '3A') {
       imagePath = `/assets/shop/${colour}_securefit_hose-arm_clip_adapter_for_miele_wide_upholstery_nozzle.webp`;
-    } else if (productId === '4A') {
+    } else if (productId === '4Z') {
       imagePath = `/assets/shop/${colour}_edgecarry_wallet.webp`;
     } else {
       // fallback or error
