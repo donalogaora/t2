@@ -585,6 +585,17 @@ html, body {
 	padding: clamp(2px, 6vw, 20px);
 }
 
+.text-3-2-1 {
+	font-size: 17.5px; /* Text size */
+    color: #6e6d68; /* Text color */
+    -webkit-text-stroke: 1px #24252b; /* Outline effect */
+    text-decoration: none;
+	text-align: center;
+    margin: 10px 0;
+    /*padding: 0 20px;*/
+	padding: clamp(2px, 6vw, 20px);
+}
+
 .text-3-3 {
     font-size: 21.875px; /* Adjusted size to 20px */
     font-weight: bold !important; /* Force bold text */
@@ -813,4 +824,74 @@ margin-top: 20px;
   color: #6e6d68;
   text-align: center;
   margin: 20px 0;
+}
+
+
+
+
+
+
+
+
+.product-description {
+	width: 100%;
+	margin-top: 12px;
+}
+
+.product-description summary {
+	list-style: none;
+	cursor: pointer;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+
+	font-family: "Arial Black", sans-serif;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+
+
+	font-size: 19px; /* Text size */
+    font-weight: bold; /* Bold text */
+    color: #6e6d68; /* Text color */
+    -webkit-text-stroke: 1px #24252b; /* Outline effect */
+    text-decoration: none;
+	text-align: center;
+    margin: 10px 0;
+    padding: 0 20px;
+
+	transition: color 0.2s ease;
+	user-select: none;
+}
+
+.product-description summary:hover {
+	color: #ff0000;
+}
+
+.product-description summary::-webkit-details-marker {
+	display: none;
+}
+
+.product-description summary::after {
+	content: "+";
+	font-size: 18px;
+	font-weight: bold;
+	line-height: 1;
+	transition: transform 0.2s ease;
+}
+
+.product-description[open] summary::after {
+	content: "−";
+}
+
+@keyframes fadeDown {
+	from {
+		opacity: 0;
+		transform: translateY(-4px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }
